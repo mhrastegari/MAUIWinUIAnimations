@@ -2,8 +2,8 @@
 <ContentPage
     x:Class="MAUIWinUIAnimations.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Home">
+    Title="Home"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -39,4 +39,29 @@
 
         </VerticalStackLayout>
     </ScrollView>
+
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroupList>
+            <VisualStateGroup>
+                <VisualState x:Name="Portrait">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter TargetName="CounterBtn" Property="Button.HorizontalOptions" Value="End" />
+                        <Setter TargetName="HelloLbl" Property="Label.HorizontalOptions" Value="End" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Landscape">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter TargetName="CounterBtn" Property="Button.HorizontalOptions" Value="Start" />
+                        <Setter TargetName="HelloLbl" Property="Label.HorizontalOptions" Value="Start" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateGroupList>
+    </VisualStateManager.VisualStateGroups>
 </ContentPage>
