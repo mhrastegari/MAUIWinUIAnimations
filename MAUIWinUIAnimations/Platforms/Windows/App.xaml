@@ -5,6 +5,15 @@
     xmlns:local="using:MAUIWinUIAnimations.WinUI"
     xmlns:maui="using:Microsoft.Maui">
     <maui:MauiWinUIApplication.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Transitions">
+                <Setter.Value>
+                    <TransitionCollection>
+                        <EdgeUIThemeTransition Edge="Bottom" />
+                    </TransitionCollection>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="Panel">
             <Setter Property="ChildrenTransitions">
                 <Setter.Value>
@@ -15,5 +24,4 @@
             </Setter>
         </Style>
     </maui:MauiWinUIApplication.Resources>
-
 </maui:MauiWinUIApplication>
